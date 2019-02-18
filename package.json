@@ -1,0 +1,14 @@
+{
+  "name": "zold-node-sdk",
+  "version": "0.0.1",
+  "description": "Node.JS SDK for Zold Cryptocurrency",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "Vadim Ryazanov",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}
