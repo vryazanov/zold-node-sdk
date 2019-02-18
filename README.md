@@ -1,5 +1,7 @@
-# Zold Node.JS SDK
-TBU
+# Zold Node SDK
+Base library to working with Zold Cryprocurrency.
+
+See https://wts.zold.io for details.
 
 ## How to use
 
@@ -8,12 +10,9 @@ const Wallet = require('zold-node-sdk/Wallet')
 
 const wallet = new Wallet(/* Your X-Zold-Wts token*/)
 
-wallet.id().then(id => {
-    console.log('Wallet ID: ', id)
-})
+const id = await wallet.id()
+const balance = await wallet.balance()
 
-wallet.balance().then(balance => {
-    console.log('Balance: ', balance)
-})
-
+console.log('Wallet ID: ', id)
+console.log('Balance: ', balance)
 ```
