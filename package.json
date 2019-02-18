@@ -1,8 +1,7 @@
 {
   "name": "zold-node-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.JS SDK for Zold Cryptocurrency",
-  "main": "index.js",
   "directories": {
     "lib": "lib"
   },

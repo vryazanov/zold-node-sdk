@@ -6,7 +6,7 @@ See https://wts.zold.io for details.
 ## How to use
 
 ```js
-const Wallet = require('zold-node-sdk/Wallet')
+const Wallet = require('zold-node-sdk/lib/Wallet')
 
 const wallet = new Wallet(/* Your X-Zold-Wts token*/)
 
