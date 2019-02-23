@@ -31,4 +31,8 @@ console.log('Wallet ID: ', id)
 console.log('Balance: ', balance)
 ```
 
-## 
+## How to run tests
+
+```bash
+npm run test
+```
