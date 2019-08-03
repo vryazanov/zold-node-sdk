@@ -26,12 +26,7 @@ const wallet = new Wallet(/* Your X-Zold-Wts token*/)
 
 const jobId = await wallet.pull()  /* wallet has to be presented on server before checking the balance */
 
-const isPulled = await wallet.job(jobId)
-
-if (!isPulled) {
-    // wait some time while the wallet is being pulled.
-    // ...
-}
+await wallet.job(jobId, { wait: true })
 
 const isConfirmed = await wallet.confirmed()
 
