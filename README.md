@@ -24,15 +24,29 @@ const Wallet = require('zold-node-sdk/lib/Wallet')
 
 const wallet = new Wallet(/* Your X-Zold-Wts token*/)
 
-await wallet.pull()  /* wallet has to be presented on server before checking the balance */
+const jobId = await wallet.pull()  /* wallet has to be presented on server before checking the balance */
+
+const isPulled = await wallet.job(jobId)
+
+if (!isPulled) {
+    // wait some time while the wallet is being pulled.
+    // ...
+}
+
+const isConfirmed = await wallet.confirmed()
+
+if (!isConfirmed) {
+    const keygap = await wallet.keygap()
+    // user has to save keygap before confimation
+    console.log('Keygap: ', keygap)
+    await wallet.confirm(keygap)
+}
 
 const id = await wallet.id()
 const balance = await wallet.balance()
-const keygap = await wallet.keygap()
 
 console.log('Wallet ID: ', id)
 console.log('Balance: ', balance)
-console.log('Keygap: ', keygap)
 ```
 
 ## How to run tests
